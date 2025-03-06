@@ -1,0 +1,5 @@
+{
+  "apps_config_link": "https://github.com/lexter0705/mls_config/config.json",
+  "apps_path": "./apps/",
+  "database_path": "./server/database/data.sqlite"
+}

@@ -1,0 +1,4 @@
+fastapi==0.115.1
+docker==7.1.0
+python-git==2018.2.1
+pydantic==2.10.6
