@@ -9,7 +9,8 @@ class UserWorker(DatabaseWorker):
         super().__init__(database_path)
 
     def is_user_added(self, user_id: int) -> bool:
-        selected = self.connect.execute(select(UsersTable).where(UsersTable.id == user_id)).all()
+        selected = self.connect.execute(select(UsersTable)).all()
+        print(selected)
         return len(selected) >= 1
 
     def add_user(self, password: str):

@@ -15,4 +15,4 @@ class LoadedApp(BaseModel):
 
 class AppGetter(BaseModel):
     password: str
-    id: int
+    id: str

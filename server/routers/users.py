@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 
 router = APIRouter(prefix="/user")
 
-user_worker = UserWorker("/server/database/data.db")
+user_worker = UserWorker("./server/database/data.db")
 
 
 @router.post("/is_register")
@@ -29,5 +29,9 @@ def login(user: User):
 def set_password(data: ChangePasswordData):
     if user_worker.check_password(data.password):
         user_worker.set_password(data.password, data.new_password)
-    else:
+        return JSONResponse(status_code=200, content={"data": "password changed"})
+    elif not user_worker.is_user_added(0):
         user_worker.add_user(data.new_password)
+        return JSONResponse(status_code=200, content={"data": "user added"})
+    else:
+        return JSONResponse(status_code=403, content={"data": "permission dined"})
