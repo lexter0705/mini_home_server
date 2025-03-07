@@ -1,5 +1,6 @@
-from program_manager.programs import Packages
-from program_manager.package.git_package import GitPackage
+from program_manager import package, app
+from program_manager.downloader import Downloader
 
-__all__ = ["Packages",
-           "GitPackage"]
+__all__ = ["Downloader",
+           "package",
+           "app"]

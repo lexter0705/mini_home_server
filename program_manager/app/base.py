@@ -2,6 +2,9 @@ import abc
 
 
 class App(abc.ABC):
+    def __init__(self, port: str):
+        self.__port = port
+
     @abc.abstractmethod
     def is_worked(self):
         pass
@@ -15,6 +18,5 @@ class App(abc.ABC):
         pass
 
     @property
-    @abc.abstractmethod
     def port(self) -> str:
-        pass
+        return self.__port
