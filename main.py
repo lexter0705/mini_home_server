@@ -1,4 +1,3 @@
-
 if __name__ == "__main__":
     import os
     from server.database.creator import create_database
